@@ -1,0 +1,40 @@
+.main-about {
+    width: 90%;
+    margin: auto;
+}
+
+.main-about h1{
+    font-size: 2.5rem;
+    border-bottom: 1px solid red;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    display: inline-block;
+}
+
+.main-about h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: red;
+    
+}
+
+.main-about h2:not(:first-of-type) {
+    margin-top: 3rem;
+}
+
+.main-about p {
+    font-size: 1.5rem;
+}
+
+.main-about p:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+.head {
+    display: inline-block;
+}
+
+.main-about p:last-of-type {
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+}

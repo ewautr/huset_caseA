@@ -1,0 +1,56 @@
+.details-main {
+    width: 90%;
+    margin: 4rem auto;
+    
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+}
+
+.bullets-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.details-main p {
+    display: inline-block;
+    font-size: 1.5rem
+}
+
+.at {
+    color: red;
+    font-size: 2rem;
+    margin-right: .4rem
+}
+
+.share {
+    display: block;
+    font-size: 1.5rem;
+}
+
+.description {
+    margin: 2rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid red;
+}
+
+.share-icon {
+    width: 2rem;
+    transform: translateY(.5rem);
+}
+
+.gameplay, .share {
+    font-size: 1.5rem;
+    display: block;
+    width: 87%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.event-image {
+    width: 90%;
+    margin: 4rem auto 0 auto;
+    display: block;
+    border: 1px solid red;
+}

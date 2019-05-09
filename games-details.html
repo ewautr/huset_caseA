@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Huset - board games</title>
+    <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=devide-width, initial-scale=1">
+</head>
+
+<body>
+    <nav class="nav-top">
+        <div class="logo-container">
+            <a href="index.html"><img src="img/LOGO.png" class="logo-events" alt="huset logo"></a>
+        </div>
+        <div class="social-media">
+            <ul class="social-media__list">
+                <li class="events-social-media__item"> <a href="https://www.facebook.com/BastardCafe"><img class="events-icon" src="img/icon2.png" alt="fb icon"></a> </li>
+                <li class="events-social-media__item"> <a href="https://www.instagram.com/bastard_cafe/"><img class="events-icon" src="img/icon3.png" alt="instagram icon"></a> </li>
+                <li class="events-social-media__item"> <a href="https://twitter.com/bastard_cafe"><img class="events-icon" src="img/icon1.png" alt="twitter icon"></a> </li>
+                <li class="events-social-media__item"> <a href="https://www.flickr.com/photos/135006755@N04/"><img class="events-icon" src="img/icon4.png" alt="flckr icon"></a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="events-header">
+        <a href="games.html"><img src="img/back-arrow.png" alt="back arrow" class="back-button"></a>
+        <h1 class="details-heading heading-primary">name</h1>
+    </header>
+    
+    
+    <h2 class="gameplay"><span class='at'>&rarr;</span>how to play?</h2>
+    <iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+
+    <main class="details-main">
+        <div class="bullets-container">
+            <p class="players"><span class='bullet'></span>players</p>
+            <p class="genre"><span class='bullet'></span>genre</p>
+            <p class="publisher"><span class='bullet'></span>publisher</p>
+            <p class="place"><span class='at'>@</span>Bastard's Café</p>
+        </div>
+        <p class="description">descr</p>
+        <a class="share"><span class='at'>&rarr;</span>share <img class="events-icon share-icon" src="img/icon2.png" alt="fb icon"></a>
+    </main>
+    
+    
+    <script>
+        const baseLink = "http://ingeniousneuron.com/kbhHusetDB/wordpress/wp-json/wp/v2/board_game/";
+        const params = new URLSearchParams(window.location.search);
+        const gameID = params.get("id");
+
+
+        function showGame(data) {
+            document.querySelector(".details-heading").textContent = data.title.rendered;
+        
+            document.querySelector(".description").innerHTML = data.content.rendered;
+            
+            document.querySelector(".players").textContent = "players: " + data.number_of_players;
+            
+            document.querySelector(".genre").textContent = data.genre;
+            
+            document.querySelector(".publisher").textContent = "publisher: " + data.publisher;
+            
+            document.querySelector("iframe").src = data.youtube_gameplay
+            
+        }
+
+        fetch(baseLink + gameID + "?_embed").then(e => e.json()).then(showGame);
+
+    </script>
+
+
+
+</body>
+
+</html>

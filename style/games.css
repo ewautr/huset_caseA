@@ -1,0 +1,7 @@
+.navCats a{
+    padding: 0 2rem;
+}
+
+.navCats a:not(:last-of-type){
+    border-right: 1px solid red;
+}

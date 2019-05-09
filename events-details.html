@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Huset - events</title>
+    <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=devide-width, initial-scale=1">
+</head>
+
+<body>
+    <nav class="nav-top">
+        <div class="logo-container">
+            <a href="index.html"><img src="img/LOGO.png" class="logo-events" alt="huset logo"></a>
+        </div>
+        <div class="social-media">
+            <ul class="social-media__list">
+                <li class="events-social-media__item"> <a href="https://www.facebook.com/BastardCafe"><img class="events-icon" src="img/icon2.png" alt="fb icon"></a> </li>
+                <li class="events-social-media__item"> <a href="https://www.instagram.com/bastard_cafe/"><img class="events-icon" src="img/icon3.png" alt="instagram icon"></a> </li>
+                <li class="events-social-media__item"> <a href="https://twitter.com/bastard_cafe"><img class="events-icon" src="img/icon1.png" alt="twitter icon"></a> </li>
+                <li class="events-social-media__item"> <a href="https://www.flickr.com/photos/135006755@N04/"><img class="events-icon" src="img/icon4.png" alt="flckr icon"></a> </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="events-header">
+        <a href="events.html"><img src="img/back-arrow.png" alt="back arrow" class="back-button"></a>
+        <h1 class="events-heading heading-primary">name</h1>
+    </header>
+        <img src="" class="event-image" alt="event image">
+    <main class="details-main">
+       
+        <div class="bullets-container">
+            <p class="players"><span class='bullet'></span>date</p>
+            <p class="genre"><span class='bullet'></span>time</p>
+            <p class="publisher"><span class='bullet'></span>entry</p>
+            <p class="place"><span class='at'>@</span>Bastard's Café</p>
+        </div>
+        <p class="description">description</p>
+        <a href="" class="gameplay"><span class='at'>&rarr;</span>event details</a>
+        <a class="share"><span class='at'>&rarr;</span>share <img class="events-icon share-icon" src="img/icon2.png" alt="fb icon"></a>
+    </main>
+
+
+    <script>
+        const baseLink = "http://ingeniousneuron.com/kbhHusetDB/wordpress/wp-json/wp/v2/games-events/";
+        const params = new URLSearchParams(window.location.search);
+        const eventID = params.get("id");
+
+
+        function showEvent(data) {
+            document.querySelector(".events-heading").textContent = data.title.rendered;
+
+            document.querySelector(".description").innerHTML = data.content.rendered;
+
+            document.querySelector(".players").textContent = data.event_date;
+
+            document.querySelector(".genre").textContent = "starting at: " + data.event_hour;
+
+            document.querySelector(".publisher").textContent = "entry: " + data.price;
+
+            document.querySelector(".gameplay").href = data.reference_link;
+            
+            document.querySelector(".event-image").src = data._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;;
+        }
+
+        fetch(baseLink + eventID + "?_embed").then(e => e.json()).then(showEvent);
+
+    </script>
+
+
+
+</body>
+
+</html>

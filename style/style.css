@@ -1,0 +1,150 @@
+@import "events.css";
+@import "templates.css";
+@import "games.css";
+@import "details.css";
+@import "about.css";
+
+/*GLOBAL*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #242424;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: sans-serif;
+    color: #b5b5b5;
+    line-height: 1.7;
+    letter-spacing: .2rem;
+}
+
+ul,
+li,
+a {
+    text-decoration: none;
+    color: inherit;
+    list-style-type: none;
+}
+
+
+
+/*HEADER LOGO*/
+.logo {
+    width: 50%;
+    max-width: 40rem;
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(-1px 2px 10px red);
+    }
+
+    50% {
+        filter: drop-shadow(1px -2px 15px red);
+    }
+
+    100% {
+        filter: drop-shadow(-1px 2px 10px red);
+    }
+}
+
+
+/*HEADER SOCIALS*/
+.social-media {
+    position: absolute;
+    top:0;
+    right: 0;
+    opacity: .8;
+    
+}
+
+.social-media__item {
+    margin: 1rem;
+}
+
+.icon {
+    width: 3.5rem;
+}
+
+/*NAVIGATION*/
+
+.nav-list {
+    text-align: right;
+    list-style-type: circle;
+}
+
+.nav-title {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    padding-left: 5rem;
+    font-size: 3rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid red;
+}
+
+.nav-item {
+    font-size: 1.6rem;
+    padding: .5rem;
+    
+    
+}
+
+.nav-item-span {
+    display: inline-block;
+    font-size: 1.8rem;
+    animation: glow 2s infinite;
+    transition: .2s ease-out;
+}
+
+.nav-item-span:hover {
+    transform: scale(1.1);
+}
+
+
+/*ASIDE*/
+
+.language-change {
+    position: absolute;
+    bottom: 2rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    padding-left: 2rem;
+}
+
+
+
+
+@media only screen and (max-width: 530px) {
+    
+    html {
+        font-size: 50%;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
